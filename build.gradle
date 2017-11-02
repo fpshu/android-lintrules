@@ -1,0 +1,26 @@
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+targetCompatibility = JavaVersion.VERSION_1_7
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+repositories {
+    jcenter()
+    maven { url 'https://maven.google.com' }
+}
+
+dependencies {
+    compile 'com.android.tools.lint:lint-api:26.0.0-beta5'
+    testCompile "junit:junit:4.12"
+    testCompile "com.android.tools.lint:lint:26.0.0-beta5"
+    testCompile "com.android.tools.lint:lint-tests:26.0.0-beta5"
+    testCompile "com.android.tools:testutils:26.0.0-beta5"
+}
+
+jar {
+    archiveName 'lint.jar'
+    manifest {
+        attributes("Lint-Registry-v2": "hu.fps.lint.IssueRegistry")
+    }
+}
