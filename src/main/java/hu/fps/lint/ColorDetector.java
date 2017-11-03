@@ -1,14 +1,10 @@
 package hu.fps.lint;
 
-import com.android.annotations.NonNull;
 import com.android.tools.lint.detector.api.*;
 import org.w3c.dom.Attr;
 
 import java.util.Collection;
 
-/**
- * Created by fps on 2017. 09. 21..
- */
 public class ColorDetector extends ResourceXmlDetector {
 
     /**
@@ -37,12 +33,6 @@ public class ColorDetector extends ResourceXmlDetector {
      * Constructs a new detector
      */
     public ColorDetector() {
-    }
-
-    @NonNull
-    @Override
-    public Speed getSpeed() {
-        return Speed.FAST;
     }
 
     @Override
