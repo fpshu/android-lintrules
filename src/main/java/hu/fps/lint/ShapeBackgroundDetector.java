@@ -1,20 +1,7 @@
 package hu.fps.lint;
 
-import com.android.ddmlib.Log;
-import com.android.repository.io.impl.FileSystemFileOp;
-import com.android.tools.lint.detector.api.Category;
-import com.android.tools.lint.detector.api.Implementation;
-import com.android.tools.lint.detector.api.Issue;
-import com.android.tools.lint.detector.api.ResourceXmlDetector;
-import com.android.tools.lint.detector.api.Scope;
-import com.android.tools.lint.detector.api.Severity;
-import com.android.tools.lint.detector.api.XmlContext;
-import com.android.SdkConstants;
-
-import com.intellij.psi.impl.source.SourceTreeToPsiMap;
-import org.w3c.dom.Attr;
+import com.android.tools.lint.detector.api.*;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.util.Collection;
