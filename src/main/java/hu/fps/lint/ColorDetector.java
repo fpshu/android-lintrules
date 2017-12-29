@@ -1,5 +1,6 @@
 package hu.fps.lint;
 
+import com.android.SdkConstants;
 import com.android.tools.lint.detector.api.*;
 import org.w3c.dom.Attr;
 
@@ -50,7 +51,7 @@ public class ColorDetector extends ResourceXmlDetector {
      */
     @Override
     public void visitAttribute(XmlContext context, Attr attribute) {
-        if (attribute.getValue().contains("@android:color/")) {
+        if (attribute.getValue().contains(SdkConstants.ANDROID_COLOR_RESOURCE_PREFIX)) {
             context.report(ISSUE, attribute, context.getLocation(attribute), "Using Android color resources are not recommended. Manufacturers are overriding them with other colors.");
         }
     }
