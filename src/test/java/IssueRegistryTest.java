@@ -1,5 +1,6 @@
 import com.android.tools.lint.detector.api.Issue;
 
+import hu.fps.lint.ShapeBackgroundDetector;
 import org.junit.Test;
 
 import java.util.List;
@@ -15,7 +16,10 @@ public class IssueRegistryTest {
     public void testGetIssues() {
         IssueRegistry customIssueRegistry = new IssueRegistry();
         List<Issue> actual = customIssueRegistry.getIssues();
-        assertThat(actual).containsExactly(ColorDetector.ISSUE);
+        assertThat(actual).containsExactly(
+                ColorDetector.ISSUE,
+                ShapeBackgroundDetector.ISSUE
+        );
     }
 
 }
