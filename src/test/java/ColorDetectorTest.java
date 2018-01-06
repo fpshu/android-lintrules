@@ -68,11 +68,9 @@ public class ColorDetectorTest extends LintDetectorTest {
                         "    </application>\n" +
                         "\n" +
                         "</manifest>")
-        ).allowMissingSdk().run().expectErrorCount(1).expect("AndroidManifest.xml:6:" +
-                        " Error: Using android color resources are not recommended." +
-                        " Manufacturers are overriding them with other colors. []\n" +
-"        android:icon=\"@android:color/white\"\n" +
-"        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
-                "1 errors, 0 warnings\n");
+        ).allowMissingSdk().run().expectErrorCount(1).expect("AndroidManifest.xml:6: Error: Using Android color resources are not recommended. Manufacturers are overriding them with other colors. [AndroidColorDetector]\n" +
+                "        android:icon=\"@android:color/white\"\n" +
+                "        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "1 errors, 0 warnings");
     }
 }
