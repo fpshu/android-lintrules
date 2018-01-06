@@ -23,6 +23,6 @@ dependencies {
 
 jar {
     manifest {
-        attributes("Lint-Registry-v2": "hu.fps.lint.IssueRegistry")
+        attributes("Lint-Registry-v2": "hu.fps.lintrules.IssueRegistry")
     }
 }

@@ -1,9 +1,8 @@
 import com.android.tools.lint.checks.infrastructure.LintDetectorTest;
 import com.android.tools.lint.detector.api.Detector;
 import com.android.tools.lint.detector.api.Issue;
-import hu.fps.lint.IssueRegistry;
-import hu.fps.lint.ShapeBackgroundDetector;
-import org.junit.Test;
+import hu.fps.lintrules.IssueRegistry;
+import hu.fps.lintrules.ShapeBackgroundDetector;
 
 import java.util.List;
 
@@ -19,7 +18,6 @@ public class ShapeBackgroundDetectorTest extends LintDetectorTest {
         return new IssueRegistry().getIssues();
     }
 
-    @Test
     public void testShouldDetectNoWarning() {
         lint().files(
                 xml("res/drawable/testShape.xml",
@@ -30,7 +28,6 @@ public class ShapeBackgroundDetectorTest extends LintDetectorTest {
         ).allowMissingSdk().run().expectClean();
     }
 
-    @Test
     public void testShouldDetectNoWarningWithGradient() {
         lint().files(
                 xml("res/drawable/testShape.xml",
@@ -44,7 +41,6 @@ public class ShapeBackgroundDetectorTest extends LintDetectorTest {
         ).allowMissingSdk().run().expectClean();
     }
 
-    @Test
     public void testShouldDetectWarning() {
         lint().files(
                 xml("res/drawable/testShape.xml",

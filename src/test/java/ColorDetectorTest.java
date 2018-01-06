@@ -1,9 +1,8 @@
 import com.android.tools.lint.checks.infrastructure.LintDetectorTest;
 import com.android.tools.lint.detector.api.Detector;
 import com.android.tools.lint.detector.api.Issue;
-import hu.fps.lint.ColorDetector;
-import hu.fps.lint.IssueRegistry;
-import org.junit.Test;
+import hu.fps.lintrules.ColorDetector;
+import hu.fps.lintrules.IssueRegistry;
 
 import java.util.List;
 
@@ -19,7 +18,6 @@ public class ColorDetectorTest extends LintDetectorTest {
         return new IssueRegistry().getIssues();
     }
 
-    @Test
     public void testShouldDetectNoWarning() {
         lint().files(
                 manifest("<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
@@ -45,7 +43,6 @@ public class ColorDetectorTest extends LintDetectorTest {
         ).allowMissingSdk().run().expectClean();
     }
 
-    @Test
     public void testShouldDetectWarning() {
         lint().files(
                 manifest("<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +

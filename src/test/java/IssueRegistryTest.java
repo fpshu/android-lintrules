@@ -1,12 +1,10 @@
 import com.android.tools.lint.detector.api.Issue;
-
-import hu.fps.lint.ShapeBackgroundDetector;
+import hu.fps.lintrules.ColorDetector;
+import hu.fps.lintrules.IssueRegistry;
+import hu.fps.lintrules.ShapeBackgroundDetector;
 import org.junit.Test;
 
 import java.util.List;
-
-import hu.fps.lint.ColorDetector;
-import hu.fps.lint.IssueRegistry;
 
 import static com.google.common.truth.Truth.assertThat;
 

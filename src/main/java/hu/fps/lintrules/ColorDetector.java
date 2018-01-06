@@ -1,4 +1,4 @@
-package hu.fps.lint;
+package hu.fps.lintrules;
 
 import com.android.SdkConstants;
 import com.android.tools.lint.detector.api.*;
