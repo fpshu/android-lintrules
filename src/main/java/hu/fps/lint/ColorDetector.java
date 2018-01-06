@@ -8,18 +8,13 @@ import java.util.Collection;
 
 public class ColorDetector extends ResourceXmlDetector {
 
-    /**
-     * Attribute for overriding a resource
-     */
 
     @SuppressWarnings("unchecked")
     private static final Implementation IMPLEMENTATION = new Implementation(
             ColorDetector.class,
             Scope.MANIFEST_AND_RESOURCE_SCOPE,
             Scope.MANIFEST_SCOPE, Scope.RESOURCE_FILE_SCOPE);
-    /**
-     * The main issue discovered by this detector
-     */
+
     public static final Issue ISSUE = Issue.create(
             "AndroidColorDetector",
             "Using Android color resources",
@@ -30,9 +25,6 @@ public class ColorDetector extends ResourceXmlDetector {
             Severity.ERROR,
             IMPLEMENTATION);
 
-    /**
-     * Constructs a new detector
-     */
     public ColorDetector() {
     }
 
@@ -41,14 +33,6 @@ public class ColorDetector extends ResourceXmlDetector {
         return ALL;
     }
 
-    /**
-     * Not called:
-     * ALL_RESOURCE
-     * RESOURCE
-     * <p>
-     * Called:
-     * MANIFEST
-     */
     @Override
     public void visitAttribute(XmlContext context, Attr attribute) {
         if (attribute.getValue().contains(SdkConstants.ANDROID_COLOR_RESOURCE_PREFIX)) {

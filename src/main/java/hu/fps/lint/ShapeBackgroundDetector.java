@@ -9,17 +9,11 @@ import java.util.Collections;
 
 public class ShapeBackgroundDetector extends ResourceXmlDetector {
 
-    /**
-     * Attribute for overriding a resource
-     */
-
     @SuppressWarnings("unchecked")
     private static final Implementation IMPLEMENTATION = new Implementation(
             ShapeBackgroundDetector.class,
             Scope.ALL_RESOURCES_SCOPE, Scope.ALL_RESOURCES_SCOPE);
-    /**
-     * The main issue discovered by this detector
-     */
+
     public static final Issue ISSUE = Issue.create(
             "ShapeBackgroundDetector",
             "all shapes should have background",
@@ -30,9 +24,6 @@ public class ShapeBackgroundDetector extends ResourceXmlDetector {
             Severity.ERROR,
             IMPLEMENTATION);
 
-    /**
-     * Constructs a new detector
-     */
     public ShapeBackgroundDetector() {
     }
 
