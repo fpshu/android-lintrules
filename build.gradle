@@ -6,6 +6,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
+    jcenter()
     maven { url 'https://maven.google.com' }
 }
 
@@ -14,6 +15,7 @@ dependencies {
     testCompileOnly "com.android.tools.lint:lint:26.0.1"
     testCompileOnly "com.android.tools.lint:lint-tests:26.0.1"
     testCompileOnly "com.android.tools:testutils:26.0.1"
+    testCompileOnly "junit:junit:4.12"
 }
 
 jar {
