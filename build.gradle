@@ -10,11 +10,15 @@ repositories {
     maven { url 'https://maven.google.com' }
 }
 
+ext {
+    lintVersion = '26.1.0'
+}
+
 dependencies {
-    compileOnly 'com.android.tools.lint:lint-api:26.0.1'
-    testCompileOnly "com.android.tools.lint:lint:26.0.1"
-    testCompileOnly "com.android.tools.lint:lint-tests:26.0.1"
-    testCompileOnly "com.android.tools:testutils:26.0.1"
+    compileOnly "com.android.tools.lint:lint-api:$lintVersion"
+    testCompileOnly "com.android.tools.lint:lint:$lintVersion"
+    testCompileOnly "com.android.tools.lint:lint-tests:$lintVersion"
+    testCompileOnly "com.android.tools:testutils:$lintVersion"
     testCompileOnly "junit:junit:4.12"
 }
 
