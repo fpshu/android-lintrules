@@ -1,18 +1,35 @@
-# Custom Lint rules
-This repository contains custom Android lint rules to use in projects.
+## Custom Android Lint Rules
 
-## Rules
+This project contains the following rules:
 
-### Android built-in color detector
-Detect usage of built in colors like `android:color/white`. These resource are overwritten by manufacturers.
+### AndroidColorDetector
 
-### Shape background detector
-All drawable shapes should contain a background by providing `<solid>` tag. The default background on some phones are black instead of transparent.
+Built-in Android color resources like **android:color/transparent** should not be used. 
+These can be overridden by other manufacturers. 
+For example on some phones the white differ from 0xFFFFFF and the transparent replaced with white. 
+Instead define them in colors.xml. 
 
-## Usage
-* Push changes to https://github.com/fpshu/android-lintrules
-* Add this to gradle:
+### ShapeBackgroundDetector
 
+Shape drawable xml resources must contain a `<solid>` tag, which is a background. The only exception when a gradient is defined.
+The background color varies on different phones, so it can be black, transparent or white.
+
+## Install 
+
+Include jitpack repository in the buildscript:
+
+```Groovy
+buildscript {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
 ```
-lintChecks 'com.github.fpshu:android-lintrules:master-SNAPSHOT'
+
+Add this library as a dependency with **lintChecks** configuration:
+
+```Groovy
+dependencies {
+    lintChecks 'com.github.fpshu:android-lintrules:master-SNAPSHOT'
+}
 ```
